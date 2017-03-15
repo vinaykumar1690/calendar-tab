@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Plock",
+  "description": "This extension will inform you of your calendar events",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "name": "Plock"
+  },
+  "background":{
+  "scripts":["popup.js"]
+  },
+  "oauth2": {
+    "client_id": "141655970836-ecqogvh3ukgaon3pkjsbr9pevk79r190.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.readonly"
+    ]
+  },
+  "permissions": [
+   "tabs",
+   "identity"
+   ]
+}
