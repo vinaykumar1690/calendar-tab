@@ -11,6 +11,11 @@ var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 var authorizeButton = document.getElementById('authorize-button');
 var signoutButton = document.getElementById('signout-button');
 
+
+$(window).resize(function(){
+CalApi.listCalendar('primary', 'primary')
+});
+
 /**
  *  On load, called to load the auth2 library and API client library.
  */
