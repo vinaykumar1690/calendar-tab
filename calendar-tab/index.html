@@ -8,13 +8,44 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>  
-    <p>Calendar Tab</p>
+<style>
+    #para1 {
+    text-align: center;
+    color: red;
+    }
+
+    #main1 {
+      margin: 50px 50px 50px 50px;
+    } 
+
+    #signout-button {
+      float:right;
+    }
+
+    #calendar {
+      margin-top: 50px
+    }
+
+  </style>
+
+    <p id="para1">Calendar Tab</p>
+
+    <div class="container-fluid" id="main1">
     
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize-button" style="display: none;">Authorize</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
 
+    
+    <i class="glyphicon glyphicon-cog"></i>
+
     <div id="calendar" style="height: 250px;"></div>
+
+    </div>
+
+    
+
+    
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src=resources/js/google-calendar-script.js></script>
