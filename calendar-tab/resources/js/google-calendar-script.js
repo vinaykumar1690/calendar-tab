@@ -80,44 +80,6 @@ function appendPre(message) {
 }
 
 var CalApi = (function() {
-  var drawTimeline = function(events) {
-    var container = document.getElementById('calendar');
-    var chart = new google.visualization.Timeline(container);
-    var dataTable = new google.visualization.DataTable();
-
-    dataTable.addColumn({
-      type: 'string',
-      id: 'Date'
-    });
-
-    dataTable.addColumn({
-      type: 'string',
-      id: 'Event'
-    });
-
-    dataTable.addColumn({
-      type: 'date',
-      id: 'Start'
-    });
-
-    dataTable.addColumn({
-      type: 'date',
-      id: 'End'
-    });
-
-    dataTable.addRows(events);
-
-    var options = {
-      timeline: {
-        groupByRowLabel: true,
-        showBarLabels: false,
-      },
-      avoidOverlappingGridLines: false
-    };
-
-    chart.draw(dataTable, options);
-  }
-
   /**
    * List events between the given start datetime and end datetime
    */
@@ -164,16 +126,7 @@ var CalApi = (function() {
       }
 
       if (calevents.length > 0) {
-        for (i = 0; i < calevents.length; i++) {
-          var event = calevents[i];
-          appendPre(event[0] + '(' + event[1] + ')')
-        }
-        google.charts.load("current", {
-          packages: ["timeline"]
-        });
-        google.charts.setOnLoadCallback(function() {
-          drawTimeline(calevents)
-        });
+        drawChart(calevents)
       } else {
         appendPre('No events found')
       }
